@@ -2,19 +2,18 @@ import math
 
 N = int(input())
 
-k = 0
-a = 2
-s = set()
+a_max = math.floor(math.sqrt(N))
+b_max = math.floor(math.log2(N))
 
+cnt = []
 
-while a > 0:
-    b = math.floor(math.log(N, a))
-    if b < 2:
-        break
-    else:
-        for i in range(2, b+1):
-            s.add(a ** b)
-    a += 1
+for a in range(2, a_max+1):
+    for b in range(2, b_max+1):
+        if math.pow(a, b) <= N:
+            cnt.append(math.pow(a, b))
+        else:
+            break
 
+cnt = set(cnt)
 
-print(N - len(s))
+print(N - len(cnt))
