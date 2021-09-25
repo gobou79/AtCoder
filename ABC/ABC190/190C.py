@@ -1,20 +1,34 @@
-
 import itertools
 
-N, M= map(int, input().split())
-
-cond = [list(map(int, input().split())) for _ in range(M)]
+N, M = map(int, input().split())
+A, B = [], []
+for i in range(M):
+    a, b = map(int, input().split())
+    A.append(a)
+    B.append(b)
 
 K = int(input())
+C, D = [], []
+for i in range(K):
+    c, d = map(int, input().split())
+    C.append(c)
+    D.append(d)
 
-choice = [tuple(map(int, input().split())) for _ in range(K)]
-
+choice = list(itertools.product([0, 1], repeat=K))
 ans = 0
 
-for balls in itertools.product(*choice):
-    balls = set(balls)
-    cnt = sum(A in balls and B in balls for A, B in cond)
-    if ans < cnt:
+for i in range(len(choice)):
+    s = set([])
+    cnt = 0
+    for j in range(K):
+        if choice[i][j] == 0:
+            s.add(C[j])
+        else:
+            s.add(D[j])
+    for i in range(M):
+        if A[i] in s and B[i] in s:
+            cnt += 1
+    if cnt > ans:
         ans = cnt
 
 print(ans)
