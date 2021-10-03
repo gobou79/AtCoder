@@ -1,24 +1,25 @@
-nc = list(map(int, input().split()))
-N = nc[0]
-C = nc[1]
-abc = [map(int, input().split()) for _ in range(N)]
-a, b, c = [list(i) for i in zip(*abc)]
+from collections import defaultdict
 
-t = {}
-total = 0
+N, C = map(int, input().split())
 
-for i in range(len(a)):
-    for j in range(a[i], b[i]+1):
-        if '{}'.format(j) in t:
-            t['{}'.format(j)] = t['{}'.format(j)] + c[i]
-        else:
-            t['{}'.format(j)] = c[i]
+imos = defaultdict(int)
 
-for i in t.values():
-    if i > C:
-        total += C
+for i in range(N):
+    a, b, c = map(int, input().split())
+    imos[a] += c
+    imos[b+1] -= c
+
+key = sorted(imos.keys())
+ans = 0
+before = 0
+money = 0
+
+for i in key:
+    if money > C:
+        ans += C * (i-before)
     else:
-        total += i
+        ans += money * (i-before)
+    before = i
+    money += imos[i]
 
-print(total)
-print(t)
+print(ans)
