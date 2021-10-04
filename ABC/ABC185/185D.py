@@ -1,25 +1,34 @@
 import math
-a = list(map(int,input().split()))
-b = list(map(int,input().split()))
-b.append(0)
-b.append(a[0]+1)
-c = []
-b.sort()
+N, M = map(int, input().split())
+if M == 0:
+    print(1)
+    exit()
 
-if a[1] == 0:
-    print(a[0])
-else:
-    for i in range(a[1]+1):
-        if b[i+1]-b[i]-1 > 0:
-            c.append(b[i+1]-b[i]-1)
+A = list(map(int, input().split()))
 
-    if not c:
-        print(0)
-    else:
-        d = min(c)
-        k = 0
+A.sort()
+B = []
 
-        for i in range(len(c)):
-            k += math.ceil(c[i]/d)
+for i in range(len(A)-1):
+    B.append(A[i+1]-A[i]-1)
 
-        print(k)
+B.append(A[0]-1)
+B.append(N-A[-1])
+
+s = set(B)
+if 0 in s:
+    s.remove(0)
+C = list(s)
+
+if len(C) == 0:
+    print(0)
+    exit()
+
+mi = min(C)
+
+ans = 0
+
+for i in range(len(B)):
+    ans += math.ceil(B[i]/mi)
+
+print(ans)
