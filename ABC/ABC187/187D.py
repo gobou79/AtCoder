@@ -1,18 +1,18 @@
-n = int(input())
-ab = [map(int, input().split()) for _ in range(n)]
-a, b = [list(i) for i in zip(*ab)]
-c = []
-for i in range(n):
-    c.append(a[i] + b[i])
-t_a = sum(a)
-t_b = 0
-k = 0
-while t_b <= t_a:
-    t_b += max(c)
-    i = c.index(max(c))
-    c.remove(max(c))
-    t_a -= a[i]
-    k += 1
+N = int(input())
+X = 0
+C = []
 
-print(k)
+for i in range(N):
+    a, b = map(int, input().split())
+    X -= a
+    C.append(2 * a + b)
 
+C.sort(reverse=True)
+
+cnt = 0
+
+while X <= 0:
+    X += C[cnt]
+    cnt += 1
+
+print(cnt)
