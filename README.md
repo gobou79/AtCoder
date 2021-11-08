@@ -40,7 +40,7 @@
 | ABC214 | A, B, C |  |
 | ABC215 | A, B, C, D |  |
 | ABC216 | A, B, C |  |
-| ABC217 | A, B, C |  |
+| ABC217 | A, B, C, E |  |
 | ABC218 | A, B, C, D |  |
 | ABC219 | A, B, C |  |
 | ABC220 | A, B, C, D |  |
