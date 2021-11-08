@@ -49,6 +49,6 @@
 | ABC223 | A, B, C, D | 入緑 |
 | ABC224 | A, B, C, D |  |
 | ABC225 | A, B, C, D |  |
-| ABC226 | A, B, C, D |  |
+| ABC226 | A, B, C, D | round()は四捨五入ではない |
 | JSC2021 | A, B, C, D |  |
 | ZONE2021 | A, B, D | Cの方が難しい |
