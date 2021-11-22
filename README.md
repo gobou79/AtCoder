@@ -51,5 +51,6 @@
 | ABC225 | A, B, C, D |  |
 | ABC226 | A, B, C, D, E | round()は四捨五入ではない |
 | ABC227 | A, B, C |
+| ABC228 | A, B, C, D, E |  |
 | JSC2021 | A, B, C, D |  |
 | ZONE2021 | A, B, D | Cの方が難しい |
