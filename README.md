@@ -53,5 +53,6 @@
 | ABC227 | A, B, C |
 | ABC228 | A, B, C, D, E |  |
 | ABC229 | A, B, C, D, E | 初の5完 |
+| ABC230 | A, B, C, D, E |  |
 | JSC2021 | A, B, C, D |  |
 | ZONE2021 | A, B, D | Cの方が難しい |
